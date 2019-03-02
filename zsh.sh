@@ -24,7 +24,7 @@ if [ $no2 = "yes" ];then
 	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions	
 	echo -e "${yellow} 下载代码高亮... ${font}"
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-	
+#-------下面有问题 sed无法替换字符串
 	#启动自动补全和高亮
 	a=`grep "plugins=.*" ~/.zshrc | cut -d "=" -f 2`
 	b='(git zsh-autosuggestions zsh-syntax-highlighting)'
@@ -39,7 +39,7 @@ if [ $no2 = "yes" ];then
 	e=`grep "PROMPT=.*" ~/.oh-my-zsh/themes/robbyrussell.zsh-theme | cut -d "'" -f 2`
 	f='%{$fg_bold[yellow]%}%n@%m ${ret_status} %{$fg[cyan]%}%d%{$reset_color%} $(git_prompt_info)'	
 	set -i s/$e/$f/ ~/.oh-my-zsh/themes/robbyrussell.zsh-theme
-
+#-------上面有问题 sed无法替换字符串
 fi
 	}
 	
