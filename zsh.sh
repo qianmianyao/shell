@@ -39,7 +39,7 @@ if [ $no2 = "yes" ];then
 	sed -i "s/$a/$b/" ~/.zshrc
         #修改自动补全颜色
         c=`grep "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=.*" ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh | cut -d "'" -f 2 | cut -d "=" -f 2`
-        d='fg=cyan'
+        d='cyan'
         sed -i "s/$c/$d/g" ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 	#
 	#修改环境变量
