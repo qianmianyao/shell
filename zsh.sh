@@ -15,39 +15,29 @@ font="\033[0m"
 
 #安装需要的软件
 zsh_install(){
-read -p " 请问是否安装zsh [yes/no]: " no1
-if [ $no1 = "yes"  ];then
 	yum install -y wget git vim
 	yum install -y epel-release && yum install -y zsh
 	chsh -s /bin/zsh
 	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"		
-	
-fi
 	}
 
 #修改自定义的配置文件
 zsh_start(){
-read -p " 安装zsh插件并且修改配置 [yes/on]: " no2
-if [ $no2 = "yes" ];then
+	w='%{$fg_bold[yellow]%}%n@%m'
+	PROMPT="$PROMPT"$w
 	echo -e "${yellow} 下载代码自动补全... ${font}"
 	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions	
 	echo -e "${yellow} 下载代码高亮... ${font}"
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 	#启动自动补全和高亮
-        a=`grep "plugins=.*" ~/.zshrc | grep -v "rail.*"  |cut -d "(" -f 2 | cut -d ")" -f 1`
+        a=`grep "plugins=.*" ~/.zshrc | grep -v "rail.*" | cut -d "(" -f 2 | cut -d ")" -f 1`
 	b='git zsh-autosuggestions zsh-syntax-highlighting'
 	sed -i "s/$a/$b/" ~/.zshrc
         #修改自动补全颜色
         c=`grep "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=.*" ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh | cut -d "'" -f 2 | cut -d "=" -f 2`
         d='cyan'
         sed -i "s/$c/$d/g" ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-	#
-	#修改环境变量
-	#w='%{$fg_bold[yellow]%}%n@%m'
-	#PROMPT="$PROMPT"$w
-	#
 	source ~/.zshrc
-fi
 	}
 	
 #卸载zsh,删除目录并且切换成bash	
@@ -59,7 +49,7 @@ if [ $un1 = "yes" ];then
 	rm -rf ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 	rm -rf ~/.oh-my-zsh/themes/robbyrussell.zsh-theme
 	echo -e "${green} 卸载完成 ${font}"
-	chsh -s /bin/bash
+	bash
 else
 	exit 1
 fi
