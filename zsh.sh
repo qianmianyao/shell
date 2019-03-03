@@ -43,6 +43,8 @@ if [ $no2 = "yes" ];then
         sed -i "s/$c/$b/g" ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 	#
 	#修改环境变量
+	w='%{$fg_bold[yellow]%}%n@%m'
+	PROMPT="$PROMPT"$w
 	#
 	source ~/.zshrc
 fi
