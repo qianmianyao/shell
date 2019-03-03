@@ -23,10 +23,8 @@ zsh_install(){
 
 #修改自定义的配置文件
 zsh_start(){
-	w='%{$fg_bold[yellow]%}%n@%m'
-	PROMPT="$PROMPT"$w
 	echo -e "${yellow} 下载代码自动补全... ${font}"
-	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions	
+	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 	echo -e "${yellow} 下载代码高亮... ${font}"
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 	#启动自动补全和高亮
@@ -37,8 +35,8 @@ zsh_start(){
         c=`grep "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=.*" ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh | cut -d "'" -f 2 | cut -d "=" -f 2`
         d='cyan'
         sed -i "s/$c/$d/g" ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+	. .zshrc
 	}
-	
 #卸载zsh,删除目录并且切换成bash	
 zsh_uninstall(){
 read -p "确定要卸载zsh吗？ [yes/no]" un1
@@ -53,8 +51,6 @@ else
 	exit 1
 fi
 	}
-	
-
 #选项菜单	
 echo -e "${green} 1.安装zsh ${font}"
 echo -e "${green} 2.配置zsh ${font}"
@@ -80,7 +76,3 @@ start_manu(){
 	
 #启动目录
 start_manu
-
-
-
-
