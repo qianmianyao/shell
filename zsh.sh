@@ -35,7 +35,6 @@ zsh_start(){
         c=`grep "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=.*" ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh | cut -d "'" -f 2 | cut -d "=" -f 2`
         d='cyan'
         sed -i "s/$c/$d/g" ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-	. .zshrc
 	}
 #卸载zsh,删除目录并且切换成bash	
 zsh_uninstall(){
