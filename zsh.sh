@@ -33,18 +33,15 @@ if [ $no2 = "yes" ];then
 	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions	
 	echo -e "${yellow} 下载代码高亮... ${font}"
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-#-------下面有问题 sed无法替换字符串
-	 #启动自动补全和高亮
+	#启动自动补全和高亮
         a=`grep "plugins=.*" ~/.zshrc | grep -v "rail.*"  |cut -d "(" -f 2 | cut -d ")" -f 1`
 	b='git zsh-autosuggestions zsh-syntax-highlighting'
 	sed -i "s/$a/$b/" ~/.zshrc
-
-
         #修改自动补全颜色
         c=`grep "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=.*" ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh | cut -d "'" -f 2 | cut -d "=" -f 2`
         d='fg=cyan'
         sed -i "s/$c/$b/g" ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
+#-------下面有问题 sed无法替换字符串
         #z自定义修改
         #e=`grep "PROMPT=.*" ~/.oh-my-zsh/themes/robbyrussell.zsh-theme | cut -d "'" -f 2`
         #f='%{$fg_bold[yellow]%}%n@%m ${ret_status} %{$fg[cyan]%}%d%{$reset_color%} $(git_prompt_info)'
