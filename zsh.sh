@@ -63,8 +63,8 @@ if [ $un1 = "yes" ];then
 	rm -rf ~/.zshrc
 	rm -rf ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 	rm -rf ~/.oh-my-zsh/themes/robbyrussell.zsh-theme
-	chsh -s /bin/bash
 	echo -e "${green} 卸载完成 ${font}"
+	chsh -s /bin/bash
 else
 	exit 1
 fi
