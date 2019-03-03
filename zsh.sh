@@ -70,7 +70,7 @@ fi
 	
 echo -e "${green} 输入1安装zsh ${font}"
 echo -e "${green} 输入2启动并且配置zsh ${font}"
-echo -e "${green} 输入3卸载zsh ${font}"
+echo -e "${red} 输入3卸载zsh ${font}"
 
 start_man(){
 	read -p " 请输入正确的数字1&2&3 : " man
