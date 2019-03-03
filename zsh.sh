@@ -45,7 +45,7 @@ if [ $no2 = "yes" ];then
         #z自定义修改
         #e=`grep "PROMPT=.*" ~/.oh-my-zsh/themes/robbyrussell.zsh-theme | cut -d "'" -f 2`
         #f='%{$fg_bold[yellow]%}%n@%m ${ret_status} %{$fg[cyan]%}%d%{$reset_color%} $(git_prompt_info)'
-        #sed -i 's/'${e}'/'${f}'/g' ~/.oh-my-zsh/themes/robbyrussell.zsh-theme
+        #sed -i "s/$e/$f/g" ~/.oh-my-zsh/themes/robbyrussell.zsh-theme
 
 #-------上面有问题 sed无法替换字符串
 	source ~/.zshrc
