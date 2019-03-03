@@ -1,10 +1,10 @@
 #!/bin/bash
-#=================================================================#
-#   System Required: CentOS7	                                  #
-#   Description: zsh_install                      		  #
-#   Author: devil                                                 #
-#   Website: https://devil.moe                                    #
-#=================================================================#
+echo "#=================================================================#"
+echo "#   System Required: CentOS7"
+echo "#   Description: zsh_install"
+echo "#   Author: devil"
+echo "#   Website: https://devil.moe"
+echo "#=================================================================#"
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 #颜色样式
@@ -71,9 +71,9 @@ fi
 	
 
 #选项菜单	
-echo -e "${green} 输入1安装zsh ${font}"
-echo -e "${green} 输入2启动并且配置zsh ${font}"
-echo -e "${red} 输入3卸载zsh ${font}"
+echo -e "${green} 2.安装zsh ${font}"
+echo -e "${green} 2.配置zsh ${font}"
+echo -e "${red} 3.卸载zsh ${font}"
 
 start_manu(){
 	read -p " 请输入正确的数字1&2&3 : " man
