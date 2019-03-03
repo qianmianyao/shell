@@ -79,7 +79,3 @@ start_manu(){
 	
 #启动目录
 start_manu
-
-
-
-
