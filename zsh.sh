@@ -25,7 +25,7 @@ if [ $no2 = "yes" ];then
 	echo -e "${yellow} 下载代码高亮... ${font}"
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 #-------下面有问题 sed无法替换字符串
-	        #启动自动补全和高亮
+	 #启动自动补全和高亮
         a=`grep "plugins=.*" ~/.zshrc | cut -d "=" -f 2`
         b='(git zsh-autosuggestions zsh-syntax-highlighting)'
         sed -i "s!$a!$b!" ~/.zshrc
@@ -50,20 +50,19 @@ read -p "确定要卸载zsh吗？ [yes/no]" un1
 if [ $un1 = "yes" ];then
 	rm -rf ~/.oh-my-zsh
 	rm -rf ~/.zshrc
-	rm -rf ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-	rm -rf ~/.oh-my-zsh/themes/robbyrussell.zsh-theme
 	chsh -s /bin/bash
 	echo -e "${green} 卸载完成 ${font}"
+	chsh -s /bin/bash
 else
 	exit 1
 fi
 	}
 	
 
-	
-echo -e "${green} 输入1安装zsh ${font}"
-echo -e "${green} 输入2启动并且配置zsh ${font}"
-echo -e "${green} 输入3卸载zsh ${font}"
+echo -e "欢迎使用一键安装zsh，本脚本仅适用Centos"	
+echo -e "${green} 1.安装zsh ${font}"
+echo -e "${green} 2.启动并且配置zsh ${font}"
+echo -e "${red} 3.卸载zsh ${font}"
 
 start_man(){
 	read -p " 请输入正确的数字1&2&3 : " man
