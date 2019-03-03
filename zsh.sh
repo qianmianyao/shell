@@ -71,7 +71,7 @@ fi
 	
 
 #选项菜单	
-echo -e "${green} 2.安装zsh ${font}"
+echo -e "${green} 1.安装zsh ${font}"
 echo -e "${green} 2.配置zsh ${font}"
 echo -e "${red} 3.卸载zsh ${font}"
 
