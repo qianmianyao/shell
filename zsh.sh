@@ -17,8 +17,9 @@ read -p " 请问是否安装zsh [yes/no]: " no1
 if [ $no1 = "yes"  ];then
 	yum install -y wget git vim
 	yum install -y epel-release && yum install -y zsh
-	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"		
 	chsh -s /bin/zsh
+	sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"		
+	
 fi
 	}
 
