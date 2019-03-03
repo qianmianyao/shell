@@ -7,11 +7,13 @@
 #=================================================================#
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
+#颜色样式
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
 font="\033[0m"
 
+#安装需要的软件
 zsh_install(){
 read -p " 请问是否安装zsh [yes/no]: " no1
 if [ $no1 = "yes"  ];then
@@ -23,6 +25,7 @@ if [ $no1 = "yes"  ];then
 fi
 	}
 
+#修改自定义的配置文件
 zsh_start(){
 read -p " 安装zsh插件并且修改配置 [yes/on]: " no2
 if [ $no2 = "yes" ];then
@@ -31,7 +34,7 @@ if [ $no2 = "yes" ];then
 	echo -e "${yellow} 下载代码高亮... ${font}"
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 #-------下面有问题 sed无法替换字符串
-	        #启动自动补全和高亮
+	 #启动自动补全和高亮
         a=`grep "plugins=.*" ~/.zshrc | cut -d "=" -f 2`
         b='(git zsh-autosuggestions zsh-syntax-highlighting)'
         sed -i 's/'${a}'/'${b}'/g' ~/.zshrc
@@ -51,7 +54,7 @@ if [ $no2 = "yes" ];then
 fi
 	}
 	
-	
+#卸载zsh,删除目录并且切换成bash	
 zsh_uninstall(){
 read -p "确定要卸载zsh吗？ [yes/no]" un1
 if [ $un1 = "yes" ];then
@@ -67,12 +70,12 @@ fi
 	}
 	
 
-	
+#选项菜单	
 echo -e "${green} 输入1安装zsh ${font}"
 echo -e "${green} 输入2启动并且配置zsh ${font}"
 echo -e "${red} 输入3卸载zsh ${font}"
 
-start_man(){
+start_manu(){
 	read -p " 请输入正确的数字1&2&3 : " man
 	case "$man" in
 		1)
@@ -89,7 +92,9 @@ start_man(){
 		;;
 	esac
 	}
-start_man
+	
+#启动目录
+start_manu
 
 
 
