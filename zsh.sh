@@ -40,11 +40,11 @@ if [ $no2 = "yes" ];then
         #修改自动补全颜色
         c=`grep "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=.*" ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh | cut -d "'" -f 2 | cut -d "=" -f 2`
         d='fg=cyan'
-        sed -i "s/$c/$b/g" ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+        sed -i "s/$c/$d/g" ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 	#
 	#修改环境变量
-	w='%{$fg_bold[yellow]%}%n@%m'
-	PROMPT="$PROMPT"$w
+	#w='%{$fg_bold[yellow]%}%n@%m'
+	#PROMPT="$PROMPT"$w
 	#
 	source ~/.zshrc
 fi
