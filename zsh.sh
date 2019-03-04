@@ -64,8 +64,8 @@ wget -N https://raw.githubusercontent.com/zp1998421/shell/master/zsh.sh
 #选项菜单	
 echo -e "${green} 1.安装zsh ${font}"
 echo -e "${green} 2.配置zsh ${font}"
-echo -e "${green} 4.更新脚本 ${font}"
-echo -e "${red} 3.卸载zsh ${font}"
+echo -e "${green} 3.更新脚本 ${font}"
+echo -e "${red} 4.卸载zsh ${font}"
 
 
 start_manu(){
@@ -77,10 +77,10 @@ start_manu(){
 		2)
 		zsh_start
 		;;
-		3)
+		4)
 		zsh_uninstall
 		;;
-		4)
+		3)
 		update
 		;;
 		*)
