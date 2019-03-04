@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "#=================================================================#"
 echo "#   System Required: CentOS7"
-echo "#   Description: zsh_install"
+echo "#   Description: zsh_install V1.0"
 echo "#   Author: devil"
 echo "#   Website: https://devil.moe"
 echo "#=================================================================#"
