@@ -54,10 +54,19 @@ else
 	exit 1
 fi
 	}
+	
+	
+update(){
+wget -N https://raw.githubusercontent.com/zp1998421/shell/master/zsh.sh
+}
+	
+	
 #选项菜单	
 echo -e "${green} 1.安装zsh ${font}"
 echo -e "${green} 2.配置zsh ${font}"
+echo -e "${green} 4.更新脚本 ${font}"
 echo -e "${red} 3.卸载zsh ${font}"
+
 
 start_manu(){
 	read -p " 请输入正确的数字1&2&3 : " man
@@ -70,6 +79,9 @@ start_manu(){
 		;;
 		3)
 		zsh_uninstall
+		;;
+		4)
+		update
 		;;
 		*)
 		echo -e  "${yellow} 请输入正确数字! ${font}"
