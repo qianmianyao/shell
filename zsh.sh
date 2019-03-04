@@ -46,10 +46,9 @@ zsh_start(){
 zsh_uninstall(){
 read -p "确定要卸载zsh吗？ [yes/no]" un1
 if [ $un1 = "yes" ];then
+	yum remove -y zsh
 	rm -rf ~/.oh-my-zsh
 	rm -rf ~/.zshrc
-	rm -rf ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-	rm -rf ~/.oh-my-zsh/themes/robbyrussell.zsh-theme
 	echo -e "${green} 卸载完成 ${font}"
 	bash
 else
