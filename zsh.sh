@@ -35,7 +35,7 @@ zsh_start(){
         c=`grep "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=.*" ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh | cut -d "'" -f 2 | cut -d "=" -f 2`
         d='cyan'
         sed -i "s/$c/$d/g" ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-	read -p "重新启动让所有配置生效 [y/n] :" reboo
+	read -p "重启让或者关掉当前终端使所有配置生效 [y/n] :" reboo
 	if [ $reboo = "y"  ];then
 		reboot
 	fi
