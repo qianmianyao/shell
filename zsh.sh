@@ -27,6 +27,7 @@ zsh_start(){
 	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 	echo -e "${yellow} 下载代码高亮... ${font}"
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+	wget -N https://raw.githubusercontent.com/zp1998421/shell/master/robbyrussell.zsh-theme
 	#启动自动补全和高亮
         a=`grep "plugins=.*" ~/.zshrc | grep -v "rail.*" | cut -d "(" -f 2 | cut -d ")" -f 1`
 	b='git zsh-autosuggestions zsh-syntax-highlighting'
@@ -35,6 +36,7 @@ zsh_start(){
         c=`grep "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=.*" ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh | cut -d "'" -f 2 | cut -d "=" -f 2`
         d='cyan'
         sed -i "s/$c/$d/g" ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+	mv ./robbyrussell.zsh-theme ~/.oh-my-zsh/themes/
 	read -p "重启让或者关掉当前终端使所有配置生效 [y/n] :" reboo
 	if [ $reboo = "y"  ];then
 		reboot
