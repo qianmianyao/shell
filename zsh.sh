@@ -77,11 +77,11 @@ start_manu(){
 		2)
 		zsh_start
 		;;
-		4)
-		zsh_uninstall
-		;;
 		3)
 		update
+		;;
+		4)
+		zsh_uninstall
 		;;
 		*)
 		echo -e  "${yellow} 请输入正确数字! ${font}"
