@@ -7,4 +7,4 @@ zsh.sh ： 一键安装以及配置插件和主题的插件
 
 ffmpeg : 一键安装ffmpeg（可选择版本）
 
-`wget -N https://raw.githubusercontent.com/zp1998421/shell/master/ffmpeg.sh`
+`wget -N https://raw.githubusercontent.com/zp1998421/shell/master/ffmpeg.sh && chmod 755 ffmpeg.sh && bash ffmpeg.sh`
