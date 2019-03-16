@@ -1,4 +1,4 @@
-# CentOS-Base.repo
+# 清华源 CentOS-Base.repo
 #
 # The mirror system uses the connecting IP address of the client and the
 # update status of each mirror to pick mirrors that are updated to and
