@@ -18,11 +18,11 @@ install_python3(){
 	yum install update
 	yum install -y gcc*
 	yum install -y openssl-devel
-  #python3.7
+  	#python3.7
 	wget -N https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz
-  #setuptools
+  	#setuptools
 	wget -N https://files.pythonhosted.org/packages/ed/69/c805067de1feedbb98c53174b0f2df44cc05e0e9ee73bb85eebc59e508c6/setuptools-41.0.0.zip
-  #pip
+ 	 #pip
 	wget -N https://files.pythonhosted.org/packages/36/fa/51ca4d57392e2f69397cd6e5af23da2a8d37884a605f9e3f2d3bfdc48397/pip-19.0.3.tar.gz
 	tar -zxvf Python-3.7.3.tgz
 	tar -zxvf pip-19.0.3.tar.gz
