@@ -33,7 +33,7 @@ install_python3(){
 	make && make install
 	cd /usr/local/python3/bin
 	ln -s /usr/local/python3/bin/python3.7 /usr/local/bin/python3
-	if [ -f "/usr/local/bin/python3"];then
+	if [ ! -e "/usr/local/bin/python3" ];then
 		echo "python3安装完成"
 	else
 		echo "未检测到文件，可能安装失败"
@@ -49,7 +49,7 @@ install_pip(){
 	python3 setup.py build && python3 setup.py install
 	cd /usr/local/python3/bin
 	ln -s /usr/local/python3/bin/pip /usr/local/bin/pip3
-	if [ -f "/usr/local/bin/pip3"];then
+	if [ ! -e "/usr/local/bin/pip3" ];then
 		echo "pip3安装成功"
 	else
 		echo "文件未找到，可能安装失败"
