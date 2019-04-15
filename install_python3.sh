@@ -56,7 +56,7 @@ install_pip(){
 	fi
 }
 
-uninstall_python(){
+remove_python(){
 	rm -rf /usr/local/bin/pip
 	rm -rf /usr/local/bin/python3
 	rm -rf /usr/local/python3
@@ -77,7 +77,7 @@ start(){
 	install_pip
 	;;
 	3)
-	uninstall_python3
+	remove_python
 	;;
 	*)
 	echo "输入选项"
