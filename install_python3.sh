@@ -33,7 +33,7 @@ install_python3(){
 	make && make install
 	cd /usr/local/python3/bin
 	ln -s /usr/local/python3/bin/python3.7 /usr/local/bin/python3
-	if [ ! -e "/usr/local/bin/python3" ];then
+	if [ -e "/usr/local/bin/python3" ];then
 		echo -e "${red}python3安装完成${font}"
 		rm -rf Python-3.7.3
 		rm -rf Python-3.7.3.tgz
@@ -49,7 +49,7 @@ install_python3(){
 	python3 setup.py build && python3 setup.py install
 	cd /usr/local/python3/bin
 	ln -s /usr/local/python3/bin/pip /usr/local/bin/pip3
-	if [ ! -e "/usr/local/bin/pip3" ];then
+	if [ -e "/usr/local/bin/pip3" ];then
 		echo -e "${green}pip3安装成功${font}"
 		rm -rf pip-19.0.3
 		rm -rf setuptools-41.0.0
