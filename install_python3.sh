@@ -34,11 +34,11 @@ install_python3(){
 	cd /usr/local/python3/bin
 	ln -s /usr/local/python3/bin/python3.7 /usr/local/bin/python3
 	if [ ! -e "/usr/local/bin/python3" ];then
-		echo "python3安装完成"
+		echo -e "${red}python3安装完成${font}"
 		rm -rf Python-3.7.3
 		rm -rf Python-3.7.3.tgz
 	else
-		echo "未检测到文件，可能安装失败"
+		echo -e "${red}未检测到文件，可能安装失败${font}"
 	fi
 	#install pip
 	cd ~
@@ -50,13 +50,13 @@ install_python3(){
 	cd /usr/local/python3/bin
 	ln -s /usr/local/python3/bin/pip /usr/local/bin/pip3
 	if [ ! -e "/usr/local/bin/pip3" ];then
-		echo "pip3安装成功"
+		echo -e "${green}pip3安装成功${font}"
 		rm -rf pip-19.0.3
 		rm -rf setuptools-41.0.0
 		rm -rf pip-19.0.3.tar.gz
 		rm -rf setuptools-41.0.0.zip
 	else
-		echo "文件未找到，可能安装失败"
+		echo -e "${red}文件未找到，可能安装失败${font}"
 	fi
 }
 
@@ -64,7 +64,7 @@ remove_python(){
 	rm -rf /usr/local/bin/pip
 	rm -rf /usr/local/bin/python3
 	rm -rf /usr/local/python3
-	echo -e "${read}python3卸载成功${font}"
+	echo -e "${red}python3卸载成功${font}"
 }
 
 
