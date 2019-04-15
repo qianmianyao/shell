@@ -35,6 +35,8 @@ install_python3(){
 	ln -s /usr/local/python3/bin/python3.7 /usr/local/bin/python3
 	if [ ! -e "/usr/local/bin/python3" ];then
 		echo "python3安装完成"
+		rm -rf Python-3.7.3
+		rm -rf Python-3.7.3.tgz
 	else
 		echo "未检测到文件，可能安装失败"
 	fi
@@ -51,6 +53,10 @@ install_pip(){
 	ln -s /usr/local/python3/bin/pip /usr/local/bin/pip3
 	if [ ! -e "/usr/local/bin/pip3" ];then
 		echo "pip3安装成功"
+		rm -rf pip-19.0.3
+		rm -rf setuptools-41.0.0
+		rm -rf pip-19.0.3.tar.gz
+		rm -rf setuptools-41.0.0.zip
 	else
 		echo "文件未找到，可能安装失败"
 	fi
