@@ -8,7 +8,7 @@ font="\033[0m"
 
 echo -e "${green}#=========================一键安装ffmpeg==========================#${font}"
 echo -e "${green}#   System Required: CentOS7${font}"
-echo -e "${green}#   Website: https://devil.moe${font}"
+echo -e "${green}#   Website: https://qianmianyao.cn${font}"
 echo -e "${green}#=================================================================#${font}"
 echo -e "${yellow}安装ffmpeg${font}"
 #静态安装ffmpeg
