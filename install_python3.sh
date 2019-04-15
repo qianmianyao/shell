@@ -12,7 +12,9 @@ echo -e "${green}#   Website: https://qianmianyao.cn${font}"
 echo -e "${green}#=================================================================#${font}"
 echo -e "${yellow}安装python3${font}"
 
-download(){
+
+install_python3(){
+	#download
 	yum install update
 	yum install -y gcc*
 	yum install -y openssl-devel
@@ -25,9 +27,7 @@ download(){
 	tar -zxvf Python-3.7.3.tgz
 	tar -zxvf pip-19.0.3.tar.gz
 	unzip setuptools-41.0.0.zip
-}
-
-install_python3(){
+	#install
 	cd Python-3.7.3
 	./configure --prefix=/usr/local/python3 --with-ssl
 	make && make install
