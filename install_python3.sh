@@ -56,7 +56,7 @@ install_pip(){
 	fi
 }
 
-unintall_python(){
+uninstall_python(){
 	rm -rf /usr/local/bin/pip
 	rm -rf /usr/local/bin/python3
 	rm -rf /usr/local/python3
