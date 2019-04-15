@@ -70,7 +70,6 @@ remove_python(){
 
 start(){
 	echo -e "${green}1.install python3${font}"
-	echo -e "${green}2.install pip3${font}"
 	echo -e "${green}3.uninstall python3;pip${font}"
 	read -p "1&2&3:" install
 	case $install in
@@ -78,9 +77,6 @@ start(){
 	install_python3
 	;;
 	2)
-	install_pip
-	;;
-	3)
 	remove_python
 	;;
 	*)
