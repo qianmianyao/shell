@@ -65,6 +65,9 @@ remove_python(){
 	rm -rf /usr/local/bin/python3
 	rm -rf /usr/local/python3
 	echo -e "${red}python3卸载成功${font}"
+	rm -rf Python-*
+	rm -rf pip-*
+	rm -rf setuptools-*
 }
 
 
