@@ -91,6 +91,7 @@ start(){
 }
 centos(){
 	if [ -e /etc/redhat-release ];then
+		echo -e "${green}你的系统符合要求${fond}"
 		start
 	else
 		echo -e "${red}抱歉，目前脚本仅支持centos${fond}"
