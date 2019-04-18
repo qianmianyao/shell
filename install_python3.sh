@@ -13,6 +13,7 @@ echo -e "${green}#==============================================================
 echo -e "${yellow}安装python3${font}"
 
 
+
 install_python3(){
 	#download
 	yum install update
@@ -88,4 +89,11 @@ start(){
 	;;
 	esac
 }
-start
+centos(){
+	if [ -e /etc/redhat-release ];then
+		start
+	else
+		echo -e "${red}抱歉，目前脚本仅支持centos${fond}"
+	fi
+}
+centos
