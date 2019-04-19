@@ -34,7 +34,7 @@ mun(){
 	echo -e "${green}2.安装阿里源${fond}"
 	echo -e "${green}3.安装163源${fond}"
 	echo -e "${green}4.安装清华源${fond}"
-	read -p "选择[1,2,3,4]"yum_install
+	read -p "选择[1,2,3,4]："yum_install
 	case $yum_install in
 		1)
 		epel
@@ -58,7 +58,6 @@ mun(){
 
 start(){
 	if [ -e "/etc/redhat-release" ];then
-		yum install -y wget > /dev/null
 		mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 		mun
 	else
