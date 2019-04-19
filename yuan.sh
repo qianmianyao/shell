@@ -1,4 +1,15 @@
 #!/bin/bash
+#颜色样式 
+red='\033[0;31m'
+green='\033[0;32m'
+yellow='\033[0;33m'
+font="\033[0m"
+echo -e "${green}--------------------------一键换源---------------------------------${font}"
+echo -e "${green}#   System Required: CentOS7${font}"
+echo -e "${green}#   Website: https://qianmianyao.cn${font}"
+echo -e "${green}---------------------------------------------------------------------${font}"
+echo -e "${yellow}一键换源${font}"
+
 centos7(){
 	if [ -e /etc/redhat-release ];then
 		start
