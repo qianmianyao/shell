@@ -1,5 +1,5 @@
 #!/bin/bash
-centos(){
+centos7(){
 	if [ -e /etc/redhat-release ];then
 		start
 	else
@@ -54,4 +54,4 @@ start(){
 	esac
 }
 
-root
+centos7
