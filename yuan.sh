@@ -50,6 +50,7 @@ mun(){
 		;;
 		*)
 		mv /etc/yum.repos.d/CentOS-Base.repo.backup /etc/yum.repos.d/CentOS-Base.repo
+		yum makecache
 		exit 1
 		;;
 	esac
