@@ -19,6 +19,7 @@ install_python3(){
 	yum install update
 	yum install -y gcc*
 	yum install -y openssl-devel
+	yum install -y unzip
   	#download python3.7
 	wget -N https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz
   	#download setuptools
