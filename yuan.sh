@@ -10,26 +10,26 @@ echo -e "${green}#   Website: https://qianmianyao.cn${font}"
 echo -e "${green}---------------------------------------------------------------------${font}"
 echo -e "${yellow}一键换源${font}"
 
-yum_epel(){
+epel(){
 	yum install -y epel*
 }
 
-yum_ali(){
+ali(){
 	wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 	yum makecache
 }
 
-yum_163(){
+wy(){
 	wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.163.com/.help/CentOS7-Base-163.repo
 	yum makecache
 }
 
-yum_tuna(){
+tuna(){
 	wget -O /etc/yum.repos.d/CentOS-Base.repo https://raw.githubusercontent.com/zp1998421/shell/master/yuan/tuna
 	yum makecache
 }
 
-start(){
+mun(){
 	echo -e "${green}1.安装epel源${fond}"
 	echo -e "${green}2.安装阿里源${fond}"
 	echo -e "${green}3.安装163源${fond}"
@@ -37,16 +37,16 @@ start(){
 	read -p "选择[1,2,3,4]"yum_install
 	case $yum_install in
 		1)
-		yum_epel
+		epel
 		;;
 		2)
-		yum_ali
+		ali
 		;;
 		3)
-		yum_163
+		wy
 		;;
 		4)
-		yum_tuna
+		tuna
 		;;
 		*)
 		mv /etc/yum.repos.d/CentOS-Base.repo.backup /etc/yum.repos.d/CentOS-Base.repo
@@ -55,14 +55,14 @@ start(){
 	esac
 }
 
-centos7(){
+start(){
 	if [ -e "/etc/redhat-release" ];then
 		yum install -y wget
 		mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
-		start
+		mun
 	else
 		echo -e "请使用centos7"
 		exit 2
 	fi
 }
-centos7
+start
