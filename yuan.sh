@@ -10,16 +10,6 @@ echo -e "${green}#   Website: https://qianmianyao.cn${font}"
 echo -e "${green}---------------------------------------------------------------------${font}"
 echo -e "${yellow}一键换源${font}"
 
-centos7(){
-	if [ -e "/etc/redhat-release" ];then
-		start
-	else
-		echo -e "请使用centos7"
-		exit 2
-	fi
-}
-yum install -y wget
-mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 yum_epel(){
 	yum install -y epel*
 }
@@ -65,4 +55,14 @@ start(){
 	esac
 }
 
+centos7(){
+	if [ -e "/etc/redhat-release" ];then
+		yum install -y wget
+		mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+		start
+	else
+		echo -e "请使用centos7"
+		exit 2
+	fi
+}
 centos7
