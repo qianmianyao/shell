@@ -11,7 +11,7 @@ echo -e "${green}---------------------------------------------------------------
 echo -e "${yellow}一键换源${font}"
 
 centos7(){
-	if [ -e /etc/redhat-release ];then
+	if [ -e "/etc/redhat-release" ];then
 		start
 	else
 		echo -e "请使用centos7"
