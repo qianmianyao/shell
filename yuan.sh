@@ -57,7 +57,7 @@ mun(){
 
 start(){
 	if [ -e "/etc/redhat-release" ];then
-		yum install -y wget
+		yum install -y wget > /dev/null
 		mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 		mun
 	else
