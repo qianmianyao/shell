@@ -1,6 +1,6 @@
 #!/bin/bash
 centos(){
-	if [ $(id -u) == 0 ];then
+	if [ -e /etc/redhat-release ];then
 		start
 	else
 		echo -e "请使用centos7"
