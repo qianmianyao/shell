@@ -16,6 +16,7 @@ echo -e "${yellow}安装python3${font}"
 
 install_python3(){
 	#download
+	yum install -y wget
 	yum install update
 	yum install -y gcc*
 	yum install -y openssl-devel
