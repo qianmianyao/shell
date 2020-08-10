@@ -9,10 +9,9 @@ jieya(){
 }
 
 7z(){
-    read -p "压缩密码：" passwd2
-    for ysb in *;do
-    7z a -p$passwd2 "${ysb}.7z" "$ysb"
-    done
+for ysb in *;do
+    7z a -psoulasmr.co "${ysb}.7z" "$ysb"
+done
 }
 
 start(){
